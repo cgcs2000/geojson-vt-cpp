@@ -19,7 +19,7 @@ struct project {
         const double sine = std::sin(p.y * M_PI / 180);
         const double x = p.x / 360 + 0.5;
         const double y =
-            std::max(std::min(0.5 - 0.25 * std::log((1 + sine) / (1 - sine)) / M_PI, 1.0), 0.0);
+            std::max(std::min(0.25 - (p.y / 360), 5.0), 0.0);
         return { x, y, 0.0 };
     }
 
